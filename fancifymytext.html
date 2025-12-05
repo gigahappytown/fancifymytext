@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>Fancify Shamcify</title>
+
+    <style>
+      body {
+        margin: 0;
+        background-color: #d9d9d9;
+        font-family: "Inknut Antiqua", serif;
+      }
+
+      .centerWrap {
+        width: 100%;
+        min-height: 100vh;
+        padding: 40px 16px 24px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: flex-start;
+      }
+
+      .titleWrap {
+        margin-bottom: 16px;
+        text-align: center;
+      }
+
+      .pageTitle {
+        font-size: 48px;
+        font-weight: 700;
+        color: #000000;
+        margin: 0 0 24px;
+      }
+
+      .card {
+        background: #ffffff;
+        width: 100%;
+        max-width: 680px;
+        padding: 24px 28px;
+        border-radius: 14px;
+        box-shadow: 0 6px 16px rgba(0, 0, 0, 0.18);
+        box-sizing: border-box;
+      }
+
+      fieldset {
+        border: 1px solid #000000;
+        border-radius: 8px;
+        padding: 12px 16px 16px;
+        margin: 0 0 16px 0;
+      }
+
+      fieldset legend {
+        padding: 0 6px;
+        font-weight: 700;
+      }
+
+      textarea {
+        width: 100%;
+        box-sizing: border-box;
+        font-family: inherit;
+        font-size: 16px;
+        padding: 8px;
+        border-radius: 6px;
+        border: 1px solid #000000;
+        resize: vertical;
+      }
+
+      .button {
+        font-family: "Inknut Antiqua", serif;
+        font-size: 18px;
+        padding: 10px 16px;
+        margin-top: 8px;
+        border: 1px solid #000000;
+        border-radius: 8px;
+        cursor: pointer;
+        box-sizing: border-box;
+      }
+
+      .buttonFull {
+        width: 100%;
+      }
+
+      .primaryButton {
+        background: #931621;
+        color: #ffffff;
+        border-color: #931621;
+      }
+
+      .primaryButton:hover {
+        background: #ffffff;
+        color: #931621;
+      }
+
+      .secondaryButton {
+        background: #3b3b3b;
+        color: #ffffff;
+        border-color: #000000;
+      }
+
+      .radioRow {
+        margin-top: 10px;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 12px;
+        align-items: center;
+      }
+
+      .radioRow label {
+        font-size: 16px;
+      }
+    </style>
+
+    <script src="fancifymytext.js"></script>
+  </head>
+
+  <body>
+    <div class="centerWrap">
+      <div class="titleWrap">
+        <h1 class="pageTitle">Fancify my Text</h1>
+      </div>
+
+      <div class="card">
+        <fieldset>
+          <legend>Text</legend>
+          <textarea id="text-area" rows="4" cols="30"></textarea>
+        </fieldset>
+
+        <fieldset>
+          <legend>Fancify</legend>
+
+          <button
+            id="bigger-button"
+            class="button buttonFull primaryButton"
+            onclick="makeBigger()"
+          >
+            Bigger!
+          </button>
+
+          <div class="radioRow">
+            <input
+              type="radio"
+              id="fancy"
+              name="style"
+              onchange="setFancy()"
+            />
+            <label for="fancy">FancyShmancy</label>
+
+            <input
+              type="radio"
+              id="boring"
+              name="style"
+              onchange="setBoring()"
+            />
+            <label for="boring">BoringBetty</label>
+          </div>
+
+          <button
+            id="moo-button"
+            class="button buttonFull secondaryButton"
+            onclick="moo()"
+          >
+            Moo
+          </button>
+        </fieldset>
+      </div>
+    </div>
+  </body>
+</html>
